@@ -24,7 +24,7 @@ public class ComparatorLambdaDemo {
         return new Product(faker.random().nextLong(10000),
                 faker.food().fruit().toLowerCase(),
                 faker.random().nextInt(10000),
-                faker.random().nextLong(10000),
-                faker.random().nextLong(10000));
+                faker.food().measurement(),
+                Double.parseDouble(faker.commerce().price()));
     }
 }
