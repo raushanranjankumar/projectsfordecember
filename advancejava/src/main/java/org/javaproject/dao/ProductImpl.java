@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ProductImpl implements  ProductDAO{
     List<Product> productList;
-    ProductImpl(){
+    public ProductImpl(){
         productList = new ArrayList<>();
     }
     @Override
