@@ -52,6 +52,23 @@ public class BuiltInFunctionalInterfaces {
                 faker.random().nextInt(10000),
                 faker.food().measurement(),
                 Double.parseDouble(faker.commerce().price())),0.5));
+
+        //Compare product1 unit with product2 unit and say they are same or not
+
+        BiFunction<Product,Product,Boolean> biFunction1  = ((product, product2) -> {
+            return product.getUnit().equals(product2.getUnit());
+        });
+System.out.println("Compare product1 unit with product2 unit and say they are same or not .......................");
+        System.out.println(biFunction1.apply(new Product(faker.random().nextLong(10000),
+                faker.food().fruit().toLowerCase(),
+                faker.random().nextInt(10000),
+                faker.food().measurement(),
+                Double.parseDouble(faker.commerce().price())),
+                new Product(faker.random().nextLong(10000),
+                        faker.food().fruit().toLowerCase(),
+                        faker.random().nextInt(10000),
+                        faker.food().measurement(),
+                        Double.parseDouble(faker.commerce().price()))));
     }
 
 }
