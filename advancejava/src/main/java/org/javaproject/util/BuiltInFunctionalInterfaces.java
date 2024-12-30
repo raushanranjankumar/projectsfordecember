@@ -20,10 +20,18 @@ public class BuiltInFunctionalInterfaces {
 
         //Filter product >10& using function
 
-        Function<List<Product>,List<String>> function= (productList)->{
+//        Function<List<Product>,List<String>> function= (productList)->{
+//            return productList.stream()
+//                    .filter(cost->cost.getCost()>10)
+//                    .map(t->t.getName())
+//                    .collect(Collectors.toList());
+//        };
+        //find the list of product that starts with 'b'
+
+        Function<List<Product>, List<String>> function = productList -> {
             return productList.stream()
-                    .filter(cost->cost.getCost()>10)
-                    .map(t->t.getName())
+                    .filter(str->str.getName().startsWith("b"))
+                    .map(str->str.getName())
                     .collect(Collectors.toList());
         };
         //invoke the function
