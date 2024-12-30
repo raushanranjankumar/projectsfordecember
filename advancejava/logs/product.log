@@ -3,3 +3,10 @@
 2024-12-31 01:17:57,137 INFO o.j.u.BuiltInFunctionalInterfaces [main]  false
 2024-12-31 01:19:24,355 INFO o.j.u.BuiltInFunctionalInterfaces [main] Logger:: HIgh Costly
 2024-12-31 01:19:24,360 INFO o.j.u.BuiltInFunctionalInterfaces [main]  false
+2024-12-31 01:33:12,039 INFO o.j.u.BuiltInFunctionalInterfaces [main]  true
+2024-12-31 01:33:12,041 INFO o.j.u.BuiltInFunctionalInterfaces [main] Apply BiPredicate for if cost value for two product are same
+2024-12-31 01:33:12,042 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comapring prodicts with the prices:: true
+2024-12-31 01:33:25,989 INFO o.j.u.BuiltInFunctionalInterfaces [main] Logger:: HIgh Costly
+2024-12-31 01:33:25,997 INFO o.j.u.BuiltInFunctionalInterfaces [main]  false
+2024-12-31 01:33:25,997 INFO o.j.u.BuiltInFunctionalInterfaces [main] Apply BiPredicate for if cost value for two product are same
+2024-12-31 01:33:25,998 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comapring products with the prices:: true

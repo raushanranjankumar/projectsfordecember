@@ -102,7 +102,14 @@ System.out.println("Predicate");
             return product.getName().startsWith("a");
         };
         log.info(" "+productPredicate.test(productInstace));
+        log.info("Apply BiPredicate for if cost value for two product are same");
+        BiPredicate<Product,Product> biPredicate = (product1, product2)->{
+            return product1.getCost() == product2.getCost();
+        };
+        log.info("Comapring products with the prices:: "+biPredicate.test(productInstace,productInstace));
     }
+
+
 
 
 
