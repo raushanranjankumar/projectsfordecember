@@ -8,6 +8,7 @@ import org.javaproject.models.Product;
 
 import java.util.List;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -80,6 +81,18 @@ System.out.println("Compare product1 unit with product2 unit and say they are sa
         System.out.println("Generate the OTP to confirm the cart");
         Supplier<Integer> supplier1 = CartDAO::generateOTP;
         System.out.println("OTP :: "+supplier1.get());
+
+        System.out.println("Consumer is the product");
+        Consumer<Product> consumer = (product) ->{
+            if(product.getCost() > 10){
+                System.out.println("High Cost");
+            }
+        };
+        consumer.accept(new Product(faker.random().nextLong(10000),
+                faker.food().fruit().toLowerCase(),
+                faker.random().nextInt(10000),
+                faker.food().measurement(),
+                Double.parseDouble(faker.commerce().price())));
     }
 
 }
