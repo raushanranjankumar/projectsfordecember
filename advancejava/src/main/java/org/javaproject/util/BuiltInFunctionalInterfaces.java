@@ -8,10 +8,7 @@ import org.javaproject.dao.ProductImpl;
 import org.javaproject.models.Product;
 
 import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import java.util.function.*;
 import java.util.stream.Collectors;
 @Slf4j
 public class BuiltInFunctionalInterfaces {
@@ -95,6 +92,18 @@ System.out.println("Compare product1 unit with product2 unit and say they are sa
                 faker.random().nextInt(10000),
                 faker.food().measurement(),
                 Double.parseDouble(faker.commerce().price())));
+        Product productInstace = new Product(faker.random().nextLong(10000),
+                faker.food().fruit().toLowerCase(),
+                faker.random().nextInt(10000),
+                faker.food().measurement(),
+                Double.parseDouble(faker.commerce().price()));
+System.out.println("Predicate");
+        Predicate<Product> productPredicate = (product)->{
+            return product.getName().startsWith("a");
+        };
+        log.info(" "+productPredicate.test(productInstace));
     }
+
+
 
 }
