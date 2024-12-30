@@ -1,10 +1,12 @@
 package org.javaproject.util;
 
+import com.github.javafaker.Faker;
 import org.javaproject.dao.ProductDAO;
 import org.javaproject.dao.ProductImpl;
 import org.javaproject.models.Product;
 
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -36,6 +38,20 @@ public class BuiltInFunctionalInterfaces {
         };
         //invoke the function
         function.apply(productDAO.getAllProduct()).stream().forEach(System.out::println);
+
+        //input product and discount and results would be the final price
+
+        BiFunction<Product,Double,Double> biFunction = ((product, discount) -> {
+            return product.getCost() - product.getCost()*discount;
+
+        });
+        Faker faker = new Faker();
+        System.out.println(biFunction.apply(
+        new Product(faker.random().nextLong(10000),
+                faker.food().fruit().toLowerCase(),
+                faker.random().nextInt(10000),
+                faker.food().measurement(),
+                Double.parseDouble(faker.commerce().price())),0.5));
     }
 
 }
