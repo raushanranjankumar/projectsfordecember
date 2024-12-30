@@ -1,6 +1,7 @@
 package org.javaproject.util;
 
 import com.github.javafaker.Faker;
+import lombok.extern.slf4j.Slf4j;
 import org.javaproject.dao.CartDAO;
 import org.javaproject.dao.ProductDAO;
 import org.javaproject.dao.ProductImpl;
@@ -12,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-
+@Slf4j
 public class BuiltInFunctionalInterfaces {
     public static void main(String[] args){
         ProductDAO productDAO = new ProductImpl();
@@ -86,6 +87,7 @@ System.out.println("Compare product1 unit with product2 unit and say they are sa
         Consumer<Product> consumer = (product) ->{
             if(product.getCost() > 10){
                 System.out.println("High Cost");
+                log.info("Logger:: HIgh Costly");
             }
         };
         consumer.accept(new Product(faker.random().nextLong(10000),
