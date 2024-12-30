@@ -1,6 +1,7 @@
 package org.javaproject.util;
 
 import com.github.javafaker.Faker;
+import org.javaproject.dao.CartDAO;
 import org.javaproject.dao.ProductDAO;
 import org.javaproject.dao.ProductImpl;
 import org.javaproject.models.Product;
@@ -8,6 +9,7 @@ import org.javaproject.models.Product;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class BuiltInFunctionalInterfaces {
@@ -69,6 +71,15 @@ System.out.println("Compare product1 unit with product2 unit and say they are sa
                         faker.random().nextInt(10000),
                         faker.food().measurement(),
                         Double.parseDouble(faker.commerce().price()))));
+
+
+        System.out.println("Supplier create the instance");
+        Supplier<Product> supplier = Product::new;
+        System.out.println(supplier.get().getProductId());
+
+        System.out.println("Generate the OTP to confirm the cart");
+        Supplier<Integer> supplier1 = CartDAO::generateOTP;
+        System.out.println("OTP :: "+supplier1.get());
     }
 
 }
