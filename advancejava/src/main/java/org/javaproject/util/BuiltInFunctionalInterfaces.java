@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.javaproject.dao.CartDAO;
 import org.javaproject.dao.ProductDAO;
 import org.javaproject.dao.ProductImpl;
+import org.javaproject.dao.TriFunction;
 import org.javaproject.models.Product;
 
 import java.util.List;
@@ -107,6 +108,18 @@ System.out.println("Predicate");
             return product1.getCost() == product2.getCost();
         };
         log.info("Comapring products with the prices:: "+biPredicate.test(productInstace,productInstace));
+
+        log.info("Comparing three products using Custom TriFunction");
+        TriFunction<Product,Product,Product,String> triFunction = (p1,p2,p3)->{
+            if(p1.getCost() > p2.getCost() && p1.getCost() > p3.getCost())
+                return "p1 cost is high";
+            else if(p2.getCost() > p1.getCost() && p2.getCost() > p3.getCost())
+                return "p2 cost is high";
+            if(p3.getCost() > p1.getCost() && p3.getCost() > p2.getCost())
+                return "p3 cost is high";
+            else return "All three cost are not same";
+        };
+        log.info("Check tri function:: "+triFunction.apply(productInstace,productInstace,productInstace));
     }
 
 

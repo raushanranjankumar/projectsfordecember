@@ -10,3 +10,13 @@
 2024-12-31 01:33:25,997 INFO o.j.u.BuiltInFunctionalInterfaces [main]  false
 2024-12-31 01:33:25,997 INFO o.j.u.BuiltInFunctionalInterfaces [main] Apply BiPredicate for if cost value for two product are same
 2024-12-31 01:33:25,998 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comapring products with the prices:: true
+2024-12-31 12:33:47,229 INFO o.j.u.BuiltInFunctionalInterfaces [main] Logger:: HIgh Costly
+2024-12-31 12:33:47,235 INFO o.j.u.BuiltInFunctionalInterfaces [main]  true
+2024-12-31 12:33:47,235 INFO o.j.u.BuiltInFunctionalInterfaces [main] Apply BiPredicate for if cost value for two product are same
+2024-12-31 12:33:47,236 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comapring products with the prices:: true
+2024-12-31 13:03:33,030 INFO o.j.u.BuiltInFunctionalInterfaces [main] Logger:: HIgh Costly
+2024-12-31 13:03:33,036 INFO o.j.u.BuiltInFunctionalInterfaces [main]  false
+2024-12-31 13:03:33,037 INFO o.j.u.BuiltInFunctionalInterfaces [main] Apply BiPredicate for if cost value for two product are same
+2024-12-31 13:03:33,038 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comapring products with the prices:: true
+2024-12-31 13:03:33,038 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comparing three products using Custom TriFunction
+2024-12-31 13:03:33,040 INFO o.j.u.BuiltInFunctionalInterfaces [main] Check tri function:: All three cost are not same
