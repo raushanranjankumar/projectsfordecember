@@ -15,4 +15,5 @@ public class ProductV1 {
     private Double cost;
     private Location location;
 
+
 }

@@ -2,16 +2,16 @@ package org.javaproject.util;
 
 import com.github.javafaker.Faker;
 import lombok.extern.slf4j.Slf4j;
+import org.javaproject.dao.CustomerDAO;
+import org.javaproject.dao.CustomerImpl;
 import org.javaproject.dao.ProductDAO;
 import org.javaproject.dao.ProductImpl;
+import org.javaproject.models.Customer;
 import org.javaproject.models.Location;
 import org.javaproject.models.Product;
 import org.javaproject.models.ProductV1;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
@@ -50,6 +50,27 @@ public class StreamCollectorsDemo {
                 .collect(groupingBy(ProductV1::getLocation));
         locationListMap.entrySet().stream()
                 .forEach(x->System.out.println(x.getKey()+" :: "+x.getValue()));
+
+
+        System.out.println("Collecting and then");
+        CustomerDAO customerDAO = new CustomerImpl();
+        for(int i =0;i<102;i++){
+            customerDAO.addCustomerDetails(createCustomer());
+        }
+//        for(Customer customer : customerDAO.getAllCustomer()){
+//            System.out.println(customer);
+//        }
+        System.out.println("This is Key value pair of data");
+        Map<String, Date> dateMap = customerDAO.getAllCustomer().stream()
+                .collect(Collectors.toMap(name->name.getName(),date->date.getDob()));
+        dateMap.entrySet().stream().forEach(name->System.out.println(name.getKey()+" :: "+name.getValue()));
+
+        System.out.println("Group Customer by DOB");
+        Map<Date,List<Customer>> listMap = customerDAO.getAllCustomer().stream()
+                .collect(Collectors.groupingBy(Customer::getDob));
+        listMap.entrySet().stream().forEach(date->System.out.println(date.getKey()+" :: "+date.getValue()));
+
+
     }
 
     static ProductV1 createProduct(){
@@ -60,5 +81,10 @@ public class StreamCollectorsDemo {
                 faker.food().measurement(),
                 Double.parseDouble(faker.commerce().price()),
                 new Location(faker.address().city(),faker.address().state()));
+    }
+
+    static Customer createCustomer(){
+        Faker faker = new Faker();
+        return new Customer(faker.name().firstName(),faker.date().birthday());
     }
 }
