@@ -20,3 +20,12 @@
 2024-12-31 13:03:33,038 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comapring products with the prices:: true
 2024-12-31 13:03:33,038 INFO o.j.u.BuiltInFunctionalInterfaces [main] Comparing three products using Custom TriFunction
 2024-12-31 13:03:33,040 INFO o.j.u.BuiltInFunctionalInterfaces [main] Check tri function:: All three cost are not same
+2024-12-31 15:27:21,869 INFO o.j.u.StreamCollectorsDemo [main] Create hasMap product that contains only ID and Names from List of product::
+2024-12-31 15:51:19,166 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 16:19:20,672 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 16:20:04,085 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 16:20:47,875 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 16:21:08,395 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 16:21:40,028 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 17:38:36,546 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-02 17:38:58,364 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
