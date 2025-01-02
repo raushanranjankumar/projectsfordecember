@@ -14,8 +14,7 @@ import org.javaproject.models.ProductV1;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.*;
 
 @Slf4j
 public class StreamCollectorsDemo {
@@ -55,7 +54,7 @@ public class StreamCollectorsDemo {
 
         System.out.println("Collecting and then");
         CustomerDAO customerDAO = new CustomerImpl();
-        for(int i =0;i<103;i++){
+        for(int i =0;i<120;i++){
             customerDAO.addCustomerDetails(createCustomer());
         }
 //        for(Customer customer : customerDAO.getAllCustomer()){
@@ -76,6 +75,12 @@ public class StreamCollectorsDemo {
                 .collect(Collectors.groupingBy(c->c.getDob(),Collectors.mapping(c->c.getName(),
                         collectingAndThen(Collectors.toSet(),Collections::unmodifiableSet))));
         dateListMap.entrySet().stream().forEach(System.out::println);
+
+        System.out.println("Imagine how many people have birth on same DOB");
+        Map<Date,Long> integerMap  = customerDAO.getAllCustomer().stream()
+                .collect(Collectors.groupingBy(Customer::getDob,counting()));
+        integerMap.entrySet().stream().forEach(x->System.out.println(x.getKey()+" - "+x.getValue()));
+
 
     }
 
