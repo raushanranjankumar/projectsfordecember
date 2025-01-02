@@ -47,3 +47,6 @@
 2025-01-03 00:35:10,302 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
 2025-01-03 00:35:27,570 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
 2025-01-03 00:35:43,824 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-03 00:59:27,403 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-03 00:59:47,884 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
+2025-01-03 01:00:16,557 INFO o.j.u.StreamCollectorsDemo [main] Create hashMap product that contains only ID and Names from List of product::
